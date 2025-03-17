@@ -1,0 +1,52 @@
+/* Основное содержимое страницы */
+main {
+    padding: 0; /* Убираем паддинг для основного содержимого */
+}
+
+/* Стили для изображения */
+.image-container {
+    display: flex; /* Используем Flexbox для размещения изображений в ряд */
+    justify-content: space-between; /* Пробел между изображениями */
+    width: 100%; /* Контейнер занимает полную ширину экрана */
+    overflow: hidden; /* Убираем возможные лишние скроллы */
+    padding: 0; /* Убираем паддинг у контейнера изображений */
+    margin: 0; /* Убираем отступы у контейнера изображений */
+}
+
+.image-container img {
+    width: 33.33%; /* Каждое изображение займет треть ширины контейнера */
+    height: auto; /* Сохраняем соотношение сторон */
+    margin: 0; /* Убираем отступы между изображениями */
+}
+
+body.inter-uniqueClass {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Normal weight (you can change this value to 100, 200, ... 900, as needed) */
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box; /* Устанавливаем box-sizing для всех элементов */
+}
+
+.tiser {
+    font-size: 200px; /* Размер шрифта */
+    text-align: center; /* Центрируем текст */
+    margin: 0; /* Убираем отступы со всех сторон */
+    padding: 0; /* Убираем внутренние отступы */
+    width: 100%; /* Полная ширина родителя */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 60%; /* Опустите элемент ниже; измените значение по вашему усмотрению */
+    left: 50%; /* Центрируем горизонтально */
+    transform: translate(-50%, -50%); /* Сдвигаем по центру */
+    color: white; /* Цвет текста */
+    font-family: 'Inter', sans-serif; /* Пример шрифта */
+}
+body {
+    user-select: none; /* Стандартный синтаксис */
+}
+
+img {
+    pointer-events: none; /* Запретить любые события на изображениях, включая выделение */
+}

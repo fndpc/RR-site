@@ -1,0 +1,28 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+{% block title %}Снипеты{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="form-container">
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            {{ form.title }}<br><br>
+            {{ form.author }}<br><br>
+            {{ form.photo }}<br><br>
+            <input type="submit" value="Добавить снипет"><br>
+        </form>
+    </div>
+    <div class="snipets-container">
+        {% for el in snipets %}
+            <div class="snipet">
+                {{ el.title }}<br>
+                {{ el.author }}<br>
+                    <img src="{{ el.photo.url }}" alt="{{ el.title }}" style="max-width: 100%;">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

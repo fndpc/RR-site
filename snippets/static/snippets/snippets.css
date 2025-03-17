@@ -1,0 +1,86 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    background-color: #000; /* Черный фон для всего сайта */
+    color: #fff; /* Белый цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт для текста */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1;
+    margin-right: 20px; /* Пробел между формой и снипетами */
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон для формы */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень */
+    display: flex; /* Включаем флексбокс */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем элементы по вертикали (если высота задается) */
+}
+
+.form-container form {
+    width: 100%; /* Полная ширина формы */
+    display: flex;
+    flex-direction: column; /* Элементы формы располагаются в колонку */
+}
+
+.form-container input[type="text"], 
+.form-container input[type="file"], 
+.form-container input[type="submit"] {
+    width: 100%; /* Полная ширина */
+    padding: 12px; /* Увеличение отступов внутри полей */
+    margin: 10px 0; /* Отступы между полями */
+    border: 1px solid #ccc; /* Светло-серая граница для полей */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон для полей */
+    color: #fff; /* Цвет текста в полях */
+    font-family: Arial, sans-serif; /* Шрифт для полей ввода */
+}
+
+.form-container input[type="submit"] {
+    margin-top: 15px; /* Отступ между полями ввода и кнопкой */
+    background-color: #6a00ff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста на кнопке */
+    cursor: pointer; /* Курсор при наведении */
+    font-size: 16px; /* Размер шрифта кнопки */
+    transition: background-color 0.3s; /* Анимация изменения цвета фона */
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: rgb(69, 0, 69); /* Темный цвет фона кнопки при наведении */
+}
+
+.snipets-container {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap; /* Для оформления карточек в ряд */
+    gap: 20px; /* Промежуток между карточками */
+}
+
+.snipet {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для снипетов */
+    border-radius: 8px; /* Скругление углов */
+    padding: 15px;
+    flex: 1 1 calc(33.333% - 20px); /* Ширина снипетов (3 в ряд с учетом отступов) */
+    max-width: calc(33.333% - 20px); /* Максимальная ширина для снипетов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для снипета */
+    transition: transform 0.2s; /* Анимация при наведении */
+}
+
+.snipet:hover {
+    transform: translateY(-5px); /* Подъем снипета при наведении */
+}
+
+.snipet img {
+    width: 100%; /* Заставляем изображение занимать 100% ширины карточки */
+    height: auto; /* Высота авто сохраняет пропорции */
+    border-radius: 5px; /* Скругление углов изображения */
+}

@@ -1,0 +1,44 @@
+.all-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100vw; /* Занимает 100% ширины вьюпорта */
+    margin: 20px 0 0; /* Отступ сверху (можете регулировать значение) */
+    color: #ffffff;
+    background-color: #1c1c1c;
+    border-radius: 0; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.news-item {
+    background-color: #2b2b2b; /* Фоновый цвет для элемента новости */
+    border: 1px solid #444; /* Граница вокруг каждого элемента новости */
+    border-radius: 10px; /* Закругление углов */
+    margin-bottom: 20px; /* Отступ между элементами новостей */
+    padding: 15px; /* Внутренние отступы внутри элемента новости */
+    flex: 0 1 calc(33.333% - 20px); /* Установка ширины элемента с учетом отступов */
+    box-sizing: border-box; /* Учитываем границы и отступы */
+    transition: all 0.3s ease; /* Плавный переход для изменений */
+}
+
+.news-item:hover {
+    transform: translateY(-5px); /* Подъем блока при наведении */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+}
+
+.news-title {
+    font-size: 1.5em; /* Размер шрифта для заголовка новости */
+    margin: 0; /* Убираем отступы */
+    color: rgb(89, 13, 89); /* Цвет заголовка */
+    border-bottom: 2px solid rgb(134, 0, 134); /* Нижняя граница для заголовка */
+    padding-bottom: 10px; /* Отступ снизу */
+}
+
+.news-text {
+    font-size: 1em; /* Размер шрифта для текста новости */
+    margin: 10px 0 0; /* Отступы вокруг текста */
+    line-height: 1.5; /* Высота строки для улучшенного читабельности */
+    color: #cccccc; /* Цвет текста */
+}
