@@ -64,3 +64,41 @@ img {
     background-color: #1c1c1c; /* Цвет фона формы */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для формы */
 }
+.registration {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон для формы */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень */
+    display: flex; /* Включаем флексбокс */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем элементы по вертикали (если высота задается) */
+    width: 400px; /* Ширина формы */
+    margin: 50px auto; /* Центрируем форму по горизонтали с отступом сверху */
+}
+
+.registration input[type="text"], 
+.registration input[type="password"], 
+.registration input[type="submit"] {
+    width: 100%; /* Полная ширина */
+    padding: 12px; /* Увеличение отступов внутри полей */
+    margin: 10px 0; /* Отступы между полями */
+    border: 1px solid #ccc; /* Светло-серая граница для полей */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон для полей */
+    color: #fff; /* Цвет текста в полях */
+    font-family: Arial, sans-serif; /* Шрифт для полей ввода */
+}
+
+.registration input[type="submit"] {
+    margin-top: 15px; /* Отступ между полями ввода и кнопкой */
+    background-color: #6a00ff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста на кнопке */
+    cursor: pointer; /* Курсор при наведении */
+    font-size: 16px; /* Размер шрифта кнопки */
+    transition: background-color 0.3s; /* Анимация изменения цвета фона */
+}
+
+.registration input[type="submit"]:hover {
+    background-color: rgb(69, 0, 69); /* Темный цвет фона кнопки при наведении */
+}
