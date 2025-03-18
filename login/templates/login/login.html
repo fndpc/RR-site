@@ -1,0 +1,16 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+{% block title %}Мерч{% endblock %}
+
+
+{% block body %}
+    <form action="" method="post" class="registration">
+        {% csrf_token %}
+        {% for el in form %}
+            {{ el }}<br>
+        {% endfor %}
+        <input type="submit" value="Стать VIPERR"><br>
+    </form>
+{% endblock %}
+

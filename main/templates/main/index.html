@@ -20,6 +20,11 @@
         <a href="/" class="RR">RR </a>
         <a href="/merch">Мерч</a>
         <a href="/snippets">Снипеты</a>
+        {% if me.is_anonymous %}
+            <a href="/login">Войти</a>
+        {% else %}
+            <a href="/" class="nickname">{{ me.username }}</a>
+        {% endif %}
     </nav>
     
     <main>

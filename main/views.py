@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def main(request):
+    me = request.user
+
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
@@ -21,9 +23,7 @@ def main(request):
                 print('Вы не находитесь в БД или неверный пароль')
         else:
             print('Форма не валидна:', form.errors)  # Вывод ошибок формы для отладки
-    else:
-        print('Метод GET')
 
     form = UserForm()  # Создаем форму для GET-запроса
-    data = {'form': form}
+    data = {'me': me}
     return render(request, 'main/main.html', data)
