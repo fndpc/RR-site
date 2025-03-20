@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
+from . views import LoginFormView
 
 urlpatterns = [
-path('', views.becameviperr),
-path('register/', views.register,),
+path('', LoginFormView.as_view()),
 ]

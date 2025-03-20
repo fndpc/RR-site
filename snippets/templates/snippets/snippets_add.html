@@ -1,0 +1,16 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+{% block title %}Добавить снипет{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            {{ form.title }}<br><br>
+            {{ form.author }}<br><br>
+            {{ form.photo }}<br><br>
+            <input type="submit" value="Добавить снипет"><br>
+        </form>
+    </div>
+{% endblock %}

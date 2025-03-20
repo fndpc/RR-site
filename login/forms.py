@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 class UserForm(forms.Form):
     username = forms.CharField(
@@ -15,3 +16,4 @@ class UserForm(forms.Form):
             'placeholder': 'Введите пароль'
         })
     )
+    

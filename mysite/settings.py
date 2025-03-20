@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'main',
     'login',
+    'register',
     'news',
     'merch',
     'concerts',
