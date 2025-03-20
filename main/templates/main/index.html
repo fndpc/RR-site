@@ -15,15 +15,13 @@
 </head>
 <body>
     <nav>
-        <a href="/news">Новости</a>
-        <a href="https://without-events.ru/viperr_show">Концерты</a>
-        <a href="/" class="RR">RR </a>
-        <a href="/merch">Мерч</a>
-        <a href="/snippets">Снипеты</a>
+        {% for item in menu_items %}
+        <a href="{{ item.url }}" class="{{ item.class }}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.name }}</a>
+        {% endfor %}
         {% if me.is_anonymous %}
             <a href="/login">Войти</a>
         {% else %}
-            <a href="/" class="nickname">{{ me.username }}</a>
+            <a href="/logout" class="nickname">{{ me.username }}</a>
         {% endif %}
     </nav>
     

@@ -23,7 +23,8 @@ from mysite import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('login', include('login.urls'))
+    path('login', include('login.urls')),
+    path('register', include('login.urls')),
     
 ]
 if settings.DEBUG:  # Только для режима разработки

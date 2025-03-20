@@ -1,18 +1,17 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.db import models
-
 
 class UserForm(forms.Form):
     username = forms.CharField(
+        max_length=150,
         widget=forms.TextInput(attrs={
-            'placeholder': 'username',
-            'required': 'required',
+            'class': 'form-control',
+            'placeholder': 'Введите имя пользователя'
         })
     )
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'password',
-            'required': 'required',
+            'class': 'form-control',
+            'placeholder': 'Введите пароль'
         })
     )
