@@ -1,0 +1,28 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+{% block title %}Мерч{% endblock %}
+
+
+{% block body %}
+    <form action="" method="post" class="registration">
+
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="errorlist">
+                {% for error in form.non_field_errors %}
+                    {{ error }}<br><a href="/register">Зарегестрироваться</a>
+                {% endfor %}
+
+        </div>
+    {% endif %}
+
+        {% for el in form %}
+            {{ el }}<br>
+            {{ el.errors }}<br>
+        {% endfor %}
+        <input type="submit" value="Стать VIPERR"><br>
+    </form>
+{% endblock %}
+

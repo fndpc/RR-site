@@ -2,4 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def merch(request):
-    return render(request, 'merch/merch.html')
+
+    me = request.user
+    data = {'me': me}
+    return render(request, 'merch/merch.html', data)
