@@ -21,7 +21,7 @@ class SnippetsAddView(CreateView):
     template_name = 'snippets/snippets_add.html'
     model = Snipet
     form_class = SnipetsForm
-    success_url = reverse_lazy('snipet-list')  # Укажите имя URL для перенаправления после успешного создания
+    success_url = reverse_lazy('snipet-list')
 
     def form_valid(self, form):
         return super().form_valid(form)
