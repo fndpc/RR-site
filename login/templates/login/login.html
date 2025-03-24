@@ -1,7 +1,7 @@
 {% extends 'main/index.html' %}
 {% load static %}
 
-{% block title %}Мерч{% endblock %}
+{% block title %}Авторизация{% endblock %}
 
 
 {% block body %}
@@ -11,16 +11,21 @@
 
         {% if form.non_field_errors %}
         <div class="errorlist">
-                {% for error in form.non_field_errors %}
-                    {{ error }}<br><a href="/register">Зарегестрироваться</a>
-                {% endfor %}
-
+            {% for error in form.non_field_errors %}
+                {{ error }}<br><a href="/register">Зарегестрироваться</a>
+            {% endfor %}
         </div>
-    {% endif %}
+        {% endif %}
 
         {% for el in form %}
             {{ el }}<br>
-            {{ el.errors }}<br>
+            {% if el.errors %}
+                {% for error in el.errors %}
+                <div class="field-error">
+                    {{ error }}<br>
+                </div>
+                {% endfor %}
+            {% endif %}
         {% endfor %}
         <input type="submit" value="Стать VIPERR"><br>
     </form>

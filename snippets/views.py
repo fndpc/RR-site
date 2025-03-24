@@ -1,32 +1,31 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from  . forms import SnipetsForm
 from  . models import Snipet
+from django.views.generic.list import ListView
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
+class SnippetsView(PermissionRequiredMixin, ListView):
+    model = Snipet
+    template_name = 'snippets/snippets.html'
+    context_object_name = 'snippets'
+    permission_required = 'snippets.view_Snipet'
 
-# Create your views here.
+    def get_queryset(self):
+        return super().get_queryset()
 
+# views.py
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+from .models import Snipet
+from .forms import SnipetsForm
 
-def snippets(request):
+class SnippetsAddView(PermissionRequiredMixin, CreateView):
+    template_name = 'snippets/snippets_add.html'
+    model = Snipet
+    form_class = SnipetsForm
+    success_url = reverse_lazy('snipet-list')
+    permission_required = 'snippets.add_Snipet'
 
-
-    snipets = Snipet.objects.all
-
-
-
-    # if this is a POST request we need to process the form data
-    if request.method == "POST":
-        # create a form instance and populate it with data from the request:
-        form = SnipetsForm(request.POST, request.FILES)
-        # check whether it's valid:
-        if form.is_valid():
-            form.save()
-
-            return HttpResponseRedirect("/snippets")
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = SnipetsForm()
-
-    return render(request, "snippets/snippets.html", {"form": form, "snipets": snipets})
+    def form_valid(self, form):
+        return super().form_valid(form)
